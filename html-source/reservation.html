@@ -143,7 +143,7 @@
     
     <script src="https://unpkg.com/notie"></script>
     <script>
-      console.log("I am printing from javascript");
+    let attention = Prompt();
 
 (() => {
   'use strict'
@@ -165,7 +165,9 @@
 })()
 
       document.getElementById("colorButton").addEventListener("click", function(){
-        notifyModal("title","<em>hello, world</em>", "success", "My text for the button")
+        // notifyModal("title","<em>hello, world</em>", "success", "My text for the button")
+
+        attention.success();
      
       })
 
@@ -188,6 +190,21 @@ function notifyModal(title, text, icon, confirmationButtonText){
   confirmButtonText: confirmationButtonText
 })}
 
+function Prompt(){
+  let toast = function(){
+    console.log("clicked button and got toast")
+  }
+  let success = function(){
+    console.log("clicked button and got success")
+  }
+
+  
+
+  return{
+    toast: toast,
+    success: success,
+  }
+}
 
     </script>
     
