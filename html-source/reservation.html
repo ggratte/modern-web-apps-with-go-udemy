@@ -128,6 +128,7 @@
       <div class="col">Middle</div>
       <div class="col">Right</div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -139,6 +140,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker-full.min.js"></script>
+    
     <script src="https://unpkg.com/notie"></script>
     <script>
       console.log("I am printing from javascript");
@@ -163,8 +165,8 @@
 })()
 
       document.getElementById("colorButton").addEventListener("click", function(){
-        
-        notify("This is my message", 'error')
+        notifyModal("title","<em>hello, world</em>", "success", "My text for the button")
+     
       })
 
       const elem = document.getElementById('reservationDates');
@@ -176,8 +178,17 @@ function notify(msg, msgType){
   notie.alert({
   type: msgType,
   text: msg,
-})
-}
+})}
+
+function notifyModal(title, text, icon, confirmationButtonText){
+  Swal.fire({
+  title: title,
+  html: text,
+  icon: icon,
+  confirmButtonText: confirmationButtonText
+})}
+
+
     </script>
     
   </body>
